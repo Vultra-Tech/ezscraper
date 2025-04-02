@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vultra EZ Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #8b8b8b;
+        }
+        h1 {
+            color: #000000;
+        }
+        .update {
+            background-color: #8b8b8b;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .timestamp {
+            font-size: 0.9em;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vultra EZ Scraper</h1>
+
+    {% if headlines %}
+        <div class="update">
+            <h2>Headlines:</h2>
+            <ul>
+                {% for headline in headlines %}
+                    <li>{{ headline }}</li>
+                {% endfor %}
+            </ul>
+            <p class="timestamp">Last updated: {{ last_updated }}</p>
+        </div>
+    {% else %}
+        <p>No updates available.</p>
+    {% endif %}
+    
+</body>
+</html>
